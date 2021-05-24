@@ -2,11 +2,11 @@
 <resources>
     <string-array name="emotions">
         <item>angry</item>
-        <item>disgust</item>
-        <item>fear</item>
+        <item>disgusted</item>
+        <item>scared</item>
         <item>happy</item>
         <item>neutral</item>
         <item>sad</item>
-        <item>surprise</item>
+        <item>surprised!</item>
     </string-array>
 </resources>

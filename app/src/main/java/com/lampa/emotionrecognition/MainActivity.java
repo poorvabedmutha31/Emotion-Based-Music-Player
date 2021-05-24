@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void connected() {
         // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
 
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
@@ -446,8 +446,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Detected", "The emotion is "+ reversedKeys.get(0));
         Toast.makeText(MainActivity.this, "You seem to be "+reversedKeys.get(0)+"... \nHere is a playlist for you!", Toast.LENGTH_LONG).show();
 
-        String groupName = "Detected Emotion Probabilities : ";// + " " + faceId;
+        String groupName = "You seem to be "+reversedKeys.get(0);// + " " + faceId;
         mClassificationResult.put(groupName, faceGroup);
+
+//        connected(reversedKeys.get(0));
     }
 
     // Get a rectangle that lies inside the image area
