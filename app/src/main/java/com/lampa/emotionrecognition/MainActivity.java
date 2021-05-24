@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+
+
     private void connected() {
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
