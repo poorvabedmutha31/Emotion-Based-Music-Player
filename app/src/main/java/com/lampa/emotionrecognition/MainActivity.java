@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -319,7 +320,8 @@ public class MainActivity extends AppCompatActivity {
 
                                                 classifyEmotions(faceBitmap, faceId);
 
-                                                faceId++;
+//                                                faceId++;
+
                                             }
 
                                             // Set the image with the face designations
@@ -333,6 +335,7 @@ public class MainActivity extends AppCompatActivity {
                                             // If single face, then immediately open the list
                                             if (faces.size() == 1) {
                                                 mClassificationExpandableListView.expandGroup(0);
+//                                                Toast.makeText(MainActivity.this, ArrayList.get(0), Toast.LENGTH_LONG).show();
                                             }
                                         // If no faces are found
                                         } else {
@@ -375,7 +378,10 @@ public class MainActivity extends AppCompatActivity {
             faceGroup.add(new Pair<>(key, percentage));
         }
 
-        String groupName = getString(R.string.face) + " " + faceId;
+        Log.d("Detected", "The emotion is "+ reversedKeys.get(0));
+        Toast.makeText(MainActivity.this, "You seem to be "+reversedKeys.get(0)+"... \nHere is a playlist for you!", Toast.LENGTH_LONG).show();
+
+        String groupName = "Detected Emotion Probabilities : ";// + " " + faceId;
         mClassificationResult.put(groupName, faceGroup);
     }
 
