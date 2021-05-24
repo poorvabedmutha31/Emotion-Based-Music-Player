@@ -3,6 +3,7 @@ package com.lampa.emotionrecognition;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
@@ -19,17 +20,22 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.media.audiofx.DynamicsProcessing;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -55,12 +61,13 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    public String emotion_result="";
 
     private static final int GALLERY_REQUEST_CODE = 0;
     private static final int TAKE_PHOTO_REQUEST_CODE = 1;
     private static final String CLIENT_ID = "61b6ded3327240c48e97552d4779acc2";
     private static final String SECRET_ID ="74e4a6bca21040f18f395e204da43a67";
-    private static final String REDIRECT_URI = "https://localhost.com/callback/";
+    private static final String REDIRECT_URI = "https://localhost.com/"; //callback/";
     private SpotifyAppRemote mSpotifyAppRemote;
 
     private final String MODEL_FILE_NAME = "simple_classifier.tflite";
@@ -115,9 +122,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void connected() {
-        // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
-
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
                 .subscribeToPlayerState()
@@ -127,12 +131,59 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("MainActivity", track.name + " by " + track.artist.name);
                     }
                 });
+
+        // Play a playlist
+        if(emotion_result.equals("happy")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("sad")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("angry")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("disgusted")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("scared")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("neutral")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+        if(emotion_result.equals("surprised")){
+            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+        }
+//        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_play was selected
+            case R.id.action_play: {
+                Toast.makeText(this, "Play button selected", Toast.LENGTH_SHORT).show();
+                //call Spotify onConnected()
+                connected();
+            }
+                break;
+            default: break;
+        }
+        return true;
     }
 
     @Override
@@ -442,7 +493,7 @@ public class MainActivity extends AppCompatActivity {
             String percentage = String.format("%.1f%%", sortedResult.get(key) * 100);
             faceGroup.add(new Pair<>(key, percentage));
         }
-
+        emotion_result = reversedKeys.get(0);
         Log.d("Detected", "The emotion is "+ reversedKeys.get(0));
         Toast.makeText(MainActivity.this, "You seem to be "+reversedKeys.get(0)+"... \nHere is a playlist for you!", Toast.LENGTH_LONG).show();
 
