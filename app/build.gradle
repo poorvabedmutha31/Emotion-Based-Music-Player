@@ -1,16 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+//apply plugin: 'com.google.gms.google-services'
+
 android {
-    compileSdkVersion 26
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.lampa.emotionrecognition"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -28,29 +31,12 @@ android {
     }
 }
 
-repositories {
-    mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
-}
-
 dependencies {
-
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    // This library handles authentication and authorization
-    implementation 'com.spotify.android:auth:1.2.3'
-
-    // This library handles music playback
-    implementation 'https://github.com/spotify/android-sdk.git'
-
 //    implementation 'com.google.android.gms:play-services-vision:20.1.1'
 //    implementation 'com.google.android.gms:play-services-vision-common:19.1.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    //implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'org.tensorflow:tensorflow-lite:2.2.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
     implementation 'com.google.firebase:firebase-ml-vision:'
