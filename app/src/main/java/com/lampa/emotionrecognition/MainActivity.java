@@ -20,7 +20,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.media.audiofx.DynamicsProcessing;
+//import android.media.audiofx.DynamicsProcessing;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -136,7 +136,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Play a playlist
         if(emotion_result.equals("happy")){
-            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
+            mSpotifyAppRemote.getPlayerApi().play("spotify:track:");
+//            mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
         }
         if(emotion_result.equals("sad")){
             mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DWXpyNlpWQwux?si=YxTnNPJNSRGFdMT2Zp9Kjw&utm");
