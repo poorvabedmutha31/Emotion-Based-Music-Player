@@ -13,7 +13,7 @@
         android:layout_height="49dp"
         android:layout_marginBottom="136dp"
         android:gravity="center_horizontal"
-        android:text="EMOTION BASED MUSIC PLAYER"
+        android:text="MY MOOD MY MUSIC"
 
 
         android:textAlignment="center"
