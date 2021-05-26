@@ -8,17 +8,17 @@
     tools:context=".SplashActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/screen"
         android:layout_width="276dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="152dp"
         android:gravity="center_horizontal"
-        android:text="MY MOOD MY MUSIC"
+        android:text="@string/screen"
 
 
         android:textAlignment="center"
         android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/icon"
         android:layout_width="242dp"
         android:layout_height="286dp"
         android:layout_marginBottom="264dp"
