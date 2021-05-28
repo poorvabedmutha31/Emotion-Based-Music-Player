@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+android:background="@drawable/gradient_background"
     tools:context=".SplashActivity">
 
     <TextView
         android:id="@+id/screen"
         android:layout_width="276dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="216dp"
         android:gravity="center_horizontal"
         android:text="@string/screen"
 
 
         android:textAlignment="center"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="italic"
+       android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

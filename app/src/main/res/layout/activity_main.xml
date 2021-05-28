@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
+    android:background="@drawable/gradient_background"
     tools:context=".MainActivity">
 
     <ProgressBar
@@ -29,10 +29,11 @@
 
             <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/darker_gray"
+                android:contentDescription="@string/app_name"
                 android:maxWidth="240dp"
                 android:maxHeight="240dp"
                 android:scaleType="centerCrop"
@@ -55,16 +56,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:contentDescription="@string/app_name"
                 android:text="@string/take_photo_button"
-                android:textSize="10sp" />
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/pick_image_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:contentDescription="@string/app_name"
                 android:text="@string/pick_image_button"
-                android:textSize="10sp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <View
