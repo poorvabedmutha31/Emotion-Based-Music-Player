@@ -90,25 +90,25 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_play: {
                 Toast.makeText(this, "Play button selected", Toast.LENGTH_SHORT).show();
                 if(emotion_result.equals("happy")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/casey727/playlist/6M4ZbVjkSE6P3IhbeYbnhc?si=9w-aL30NTwuYjv7H-dV7YA")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/1MFYtggdngpW8MZ75120ZL?si=e8bb2f17da834515")));
                 }
                 if(emotion_result.equals("sad")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/samuel_leadley/playlist/4rFp8l9vekheKOpeJLVkar?si=DQi3SgQbSNWEz9lI8GDWDQ")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/322mFpjrqte4Hj955SzN4j?si=c1764b99f4aa43ec")));
                 }
                 if(emotion_result.equals("angry")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/jewlgurl/playlist/7L08IETH8EQmm7k4r8rivb?si=ipkuZOKwTzy7AK95SJ5OdQ")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/0Nk354lJZn1ZDLGcLt6ci8?si=d23e7b112f724eec")));
                 }
                 if(emotion_result.equals("disgusted")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/edhlvsdgs/playlist/2E5up5sC4nSefatiBEtrfi?si=878ymrwTSwGKTKwLT6K01g")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/47YYQko4ALSgu71lnFJV98?si=7fe1f756159e414f")));
                 }
                 if(emotion_result.equals("scared")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/d6jnkgbrrdmoi89jti33kmcdc/playlist/1qIugjOGCVywaTxFTyRlh5?si=HtWGBloFSpaIeohJHEBMiw")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/3xtlVooXym9drDMEPFNKmM?si=22d359fe56f14d28")));
                 }
                 if(emotion_result.equals("neutral")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/22dy7uoxbmtefgscfkll35ndy/playlist/5kxY88geeq7EhB0LBZNugi?si=bdMxP41_S2euOugL3LFP-Q")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/6ft94TIlptCTcYU21lV8k5?si=d46812418f9a43de")));
                 }
                 if(emotion_result.equals("surprised")){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/user/h1lfsvkdru63y7zks3iebyska/playlist/48GYiMiRChvzYPltQeI8nV?si=vuSb5P1RQYqR9OqGMwiycg")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://open.spotify.com/playlist/3WEd2MZwJd6ErRJLskJuxA?si=48aba3495c774226")));
                 }
             }
                 break;
