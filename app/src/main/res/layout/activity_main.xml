@@ -29,10 +29,9 @@
 
             <ImageView
                 android:id="@+id/image_view"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="141dp"
+                android:layout_height="234dp"
                 android:adjustViewBounds="true"
-                android:background="@android:color/darker_gray"
                 android:contentDescription="@string/app_name"
                 android:maxWidth="240dp"
                 android:maxHeight="240dp"
@@ -82,6 +81,7 @@
             android:layout_height="wrap_content"
             android:childDivider="#ccc"
             android:divider="#999"
+
             android:dividerHeight="1.5dp" />
 
     </LinearLayout>

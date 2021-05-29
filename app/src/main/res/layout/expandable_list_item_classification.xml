@@ -12,7 +12,7 @@
         android:id="@+id/classification_label_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#444"
+        android:textColor="@color/white"
         android:textSize="14sp"
         tools:text="Item" />
 
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:textColor="#444"
+        android:textColor="@color/white"
         android:textSize="14sp"
         tools:text="100%" />
 
